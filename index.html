@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Banana Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              banana: {
+                100: '#FDF7E3',
+                200: '#F9EBB2',
+                300: '#F1D97E',
+                400: '#E7C34B',
+                500: '#D4AC0D', // Muted yellow (Sunflower/Gold)
+                600: '#B7950B',
+                700: '#9A7D0A',
+                800: '#7D6608',
+                900: '#5F4D06',
+              },
+              dark: {
+                800: '#1a1a1a',
+                900: '#0a0a0a', // Even darker
+              },
+              brown: {
+                800: '#4E342E',
+                900: '#3E2723',
+              }
+            },
+            animation: {
+              'bounce-slow': 'bounce 3s infinite',
+              'wiggle': 'wiggle 1s ease-in-out infinite',
+            },
+            keyframes: {
+              wiggle: {
+                '0%, 100%': { transform: 'rotate(-3deg)' },
+                '50%': { transform: 'rotate(3deg)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #121212;
+        color: #ffffff;
+      }
+      .zoom-container {
+        overflow: hidden;
+        cursor: zoom-in;
+      }
+      .zoom-container.zoomed {
+        cursor: zoom-out;
+      }
+      .zoom-container img {
+        transition: transform 0.3s ease;
+      }
+      .zoom-container.zoomed img {
+        transform: scale(2);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
