@@ -15,6 +15,7 @@ export default defineConfig(({ mode }) => {
     const apiKey = env.API_KEY || env.GEMINI_API_KEY;
 
     return {
+        base: '/VIEW-CAMERA/',
       server: {
         port: 3000,
         host: '0.0.0.0',
